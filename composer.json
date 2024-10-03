@@ -1,0 +1,106 @@
+{
+    "name": "contentacms/contenta-jsonapi-project",
+    "description": "Project template for Contenta CMS.",
+    "type": "project",
+    "license": "GPL-2.0-or-later",
+    "authors": [
+        {
+            "name": "Mateu Aguiló Bosch",
+            "email": "mateu.aguilo.bosch@gmail.com"
+        },
+        {
+            "name": "Daniel Wehner",
+            "email": "dawehner@users.noreply.github.com"
+        }
+    ],
+    "repositories": {
+        "0": {
+            "type": "composer",
+            "url": "https://packages.drupal.org/8"
+        },
+        "contenta_jsonapi": {
+            "type": "path",
+            "url": "C:/www/osc/appservices/contenta_jsonapi"
+        }
+    },
+    "require": {
+        "contentacms/contenta_jsonapi": "*",
+        "drupal-composer/drupal-scaffold": "^2.5",
+        "cweagans/composer-patches": "^1.6",
+        "vlucas/phpdotenv": "^2.4",
+        "composer/installers": "^1.2",
+        "webflo/drupal-finder": "^1.0.0",
+        "webmozart/path-util": "^2.3",
+        "phpunit/phpunit": "^6",
+        "drupal/acquia_connector": "^1.14",
+        "drupal/rules": "3.x-dev",
+        "drupal/commerce": "^2.11",
+        "drupal/devel": "^2.0",
+        "drupal/restui": "^1.16",
+        "drupal/captcha": "^1.0@beta",
+        "drupal/social_media_links": "^2.6",
+        "drupal/cors": "^1.0",
+        "drupal/legal": "^1.0@RC",
+        "drupal/mailsystem": "^4.1",
+        "drupal/paragraphs": "^1.5",
+        "drupal/geolocation": "^1.11",
+        "drupal/commerce_cart_api": "^1.0",
+        "drupal/commerce_paypal": "1.x-dev",
+        "drupal/hook_post_action": "^1.0",
+        "drupal/rest_password": "^1.4",
+        "drupal/token": "^1.5",
+        "drupal/starrating": "^4.0@alpha",
+        "drupal/commerce_authnet": "^1.1"
+    },
+    "require-dev": {
+        "webflo/drupal-core-require-dev": "^8.6.0",
+        "vijaycs85/drupal-quality-checker": "^1.0"
+    },
+    "minimum-stability": "dev",
+    "prefer-stable": true,
+    "autoload": {
+        "files": [
+            "load.environment.php"
+        ]
+    },
+    "scripts": {
+        "install:with-mysql": "scripts/install-mysql.sh",
+        "install:with-sqlite": "scripts/install-sqlite.sh"
+    },
+    "extra": {
+        "installer-paths": {
+            "docroot/core": [
+                "type:drupal-core"
+            ],
+            "docroot/libraries/{$name}": [
+                "type:drupal-library"
+            ],
+            "docroot/modules/contrib/{$name}": [
+                "type:drupal-module"
+            ],
+            "docroot/profiles/contrib/{$name}": [
+                "type:drupal-profile"
+            ],
+            "docroot/themes/contrib/{$name}": [
+                "type:drupal-theme"
+            ],
+            "drush/contrib/{$name}": [
+                "type:drupal-drush"
+            ]
+        },
+        "drupal-scaffold": {
+            "initial": {
+                "sites/default/default.services.yml": "sites/default/services.yml",
+                "sites/default/default.settings.php": "sites/default/settings.php"
+            },
+            "omit-defaults": false
+        },
+        "enable-patching": true,
+        "patches": []
+    },
+    "config": {
+        "preferred-install": {
+            "*": "auto"
+        }
+    }
+}
